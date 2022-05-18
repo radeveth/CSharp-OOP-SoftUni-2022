@@ -1,0 +1,14 @@
+C:\Users\HP\source\repos\CSharp-Advanced-OOP-SoftUni-2022-Inheritance-P00\Inheritance_Demo\bin\Debug\netcoreapp3.1\Inheritance_Demo.exe
+C:\Users\HP\source\repos\CSharp-Advanced-OOP-SoftUni-2022-Inheritance-P00\Inheritance_Demo\bin\Debug\netcoreapp3.1\Inheritance_Demo.deps.json
+C:\Users\HP\source\repos\CSharp-Advanced-OOP-SoftUni-2022-Inheritance-P00\Inheritance_Demo\bin\Debug\netcoreapp3.1\Inheritance_Demo.runtimeconfig.json
+C:\Users\HP\source\repos\CSharp-Advanced-OOP-SoftUni-2022-Inheritance-P00\Inheritance_Demo\bin\Debug\netcoreapp3.1\Inheritance_Demo.runtimeconfig.dev.json
+C:\Users\HP\source\repos\CSharp-Advanced-OOP-SoftUni-2022-Inheritance-P00\Inheritance_Demo\bin\Debug\netcoreapp3.1\Inheritance_Demo.dll
+C:\Users\HP\source\repos\CSharp-Advanced-OOP-SoftUni-2022-Inheritance-P00\Inheritance_Demo\bin\Debug\netcoreapp3.1\Inheritance_Demo.pdb
+C:\Users\HP\source\repos\CSharp-Advanced-OOP-SoftUni-2022-Inheritance-P00\Inheritance_Demo\obj\Debug\netcoreapp3.1\Inheritance_Demo.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\CSharp-Advanced-OOP-SoftUni-2022-Inheritance-P00\Inheritance_Demo\obj\Debug\netcoreapp3.1\Inheritance_Demo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\CSharp-Advanced-OOP-SoftUni-2022-Inheritance-P00\Inheritance_Demo\obj\Debug\netcoreapp3.1\Inheritance_Demo.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\CSharp-Advanced-OOP-SoftUni-2022-Inheritance-P00\Inheritance_Demo\obj\Debug\netcoreapp3.1\Inheritance_Demo.AssemblyInfo.cs
+C:\Users\HP\source\repos\CSharp-Advanced-OOP-SoftUni-2022-Inheritance-P00\Inheritance_Demo\obj\Debug\netcoreapp3.1\Inheritance_Demo.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\CSharp-Advanced-OOP-SoftUni-2022-Inheritance-P00\Inheritance_Demo\obj\Debug\netcoreapp3.1\Inheritance_Demo.dll
+C:\Users\HP\source\repos\CSharp-Advanced-OOP-SoftUni-2022-Inheritance-P00\Inheritance_Demo\obj\Debug\netcoreapp3.1\Inheritance_Demo.pdb
+C:\Users\HP\source\repos\CSharp-Advanced-OOP-SoftUni-2022-Inheritance-P00\Inheritance_Demo\obj\Debug\netcoreapp3.1\Inheritance_Demo.genruntimeconfig.cache
