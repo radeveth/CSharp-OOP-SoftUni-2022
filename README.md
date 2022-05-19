@@ -3,4 +3,5 @@ In the Object Oriented Programming course we will learn about the principles and
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [*1. Inheritance-Lab*](https://github.com/calisthenicsGuy/CSharp-OOP-SoftUni-2022/tree/main/1.%20Inheritance-Lab)
+
 [*2. Inheritance-Exercises*](https://github.com/calisthenicsGuy/CSharp-OOP-SoftUni-2022/tree/main/2.%20Inheritance-Exercises)
