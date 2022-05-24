@@ -1,0 +1,14 @@
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Interfaces_and_Abstraction-Exercises\Telephony\obj\Debug\netcoreapp3.1\Telephony.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Interfaces_and_Abstraction-Exercises\Telephony\obj\Debug\netcoreapp3.1\Telephony.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Interfaces_and_Abstraction-Exercises\Telephony\obj\Debug\netcoreapp3.1\Telephony.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Interfaces_and_Abstraction-Exercises\Telephony\obj\Debug\netcoreapp3.1\Telephony.AssemblyInfo.cs
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Interfaces_and_Abstraction-Exercises\Telephony\obj\Debug\netcoreapp3.1\Telephony.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Interfaces_and_Abstraction-Exercises\Telephony\bin\Debug\netcoreapp3.1\Telephony.exe
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Interfaces_and_Abstraction-Exercises\Telephony\bin\Debug\netcoreapp3.1\Telephony.deps.json
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Interfaces_and_Abstraction-Exercises\Telephony\bin\Debug\netcoreapp3.1\Telephony.runtimeconfig.json
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Interfaces_and_Abstraction-Exercises\Telephony\bin\Debug\netcoreapp3.1\Telephony.runtimeconfig.dev.json
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Interfaces_and_Abstraction-Exercises\Telephony\bin\Debug\netcoreapp3.1\Telephony.dll
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Interfaces_and_Abstraction-Exercises\Telephony\bin\Debug\netcoreapp3.1\Telephony.pdb
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Interfaces_and_Abstraction-Exercises\Telephony\obj\Debug\netcoreapp3.1\Telephony.dll
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Interfaces_and_Abstraction-Exercises\Telephony\obj\Debug\netcoreapp3.1\Telephony.pdb
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Interfaces_and_Abstraction-Exercises\Telephony\obj\Debug\netcoreapp3.1\Telephony.genruntimeconfig.cache
