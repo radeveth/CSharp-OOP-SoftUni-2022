@@ -1,0 +1,14 @@
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicle\bin\Debug\netcoreapp3.1\Vehicles.exe
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicle\bin\Debug\netcoreapp3.1\Vehicles.deps.json
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicle\bin\Debug\netcoreapp3.1\Vehicles.runtimeconfig.json
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicle\bin\Debug\netcoreapp3.1\Vehicles.runtimeconfig.dev.json
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicle\bin\Debug\netcoreapp3.1\Vehicles.dll
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicle\bin\Debug\netcoreapp3.1\Vehicles.pdb
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicle\obj\Debug\netcoreapp3.1\Vehicles.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicle\obj\Debug\netcoreapp3.1\Vehicles.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicle\obj\Debug\netcoreapp3.1\Vehicles.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicle\obj\Debug\netcoreapp3.1\Vehicles.AssemblyInfo.cs
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicle\obj\Debug\netcoreapp3.1\Vehicles.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicle\obj\Debug\netcoreapp3.1\Vehicles.dll
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicle\obj\Debug\netcoreapp3.1\Vehicles.pdb
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicle\obj\Debug\netcoreapp3.1\Vehicles.genruntimeconfig.cache

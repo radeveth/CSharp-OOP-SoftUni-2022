@@ -1,0 +1,14 @@
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicles_Extension\obj\Debug\netcoreapp3.1\Vehicles_Extension.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicles_Extension\obj\Debug\netcoreapp3.1\Vehicles_Extension.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicles_Extension\obj\Debug\netcoreapp3.1\Vehicles_Extension.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicles_Extension\obj\Debug\netcoreapp3.1\Vehicles_Extension.AssemblyInfo.cs
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicles_Extension\obj\Debug\netcoreapp3.1\Vehicles_Extension.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicles_Extension\bin\Debug\netcoreapp3.1\Vehicles_Extension.exe
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicles_Extension\bin\Debug\netcoreapp3.1\Vehicles_Extension.deps.json
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicles_Extension\bin\Debug\netcoreapp3.1\Vehicles_Extension.runtimeconfig.json
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicles_Extension\bin\Debug\netcoreapp3.1\Vehicles_Extension.runtimeconfig.dev.json
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicles_Extension\bin\Debug\netcoreapp3.1\Vehicles_Extension.dll
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicles_Extension\bin\Debug\netcoreapp3.1\Vehicles_Extension.pdb
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicles_Extension\obj\Debug\netcoreapp3.1\Vehicles_Extension.dll
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicles_Extension\obj\Debug\netcoreapp3.1\Vehicles_Extension.pdb
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Polymorphism-Exercises\Vehicles_Extension\obj\Debug\netcoreapp3.1\Vehicles_Extension.genruntimeconfig.cache
