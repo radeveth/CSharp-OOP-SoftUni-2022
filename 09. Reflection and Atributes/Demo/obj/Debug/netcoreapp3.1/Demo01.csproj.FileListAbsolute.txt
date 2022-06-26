@@ -1,0 +1,14 @@
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-Reflection-and-Atributes\Demo\bin\Debug\netcoreapp3.1\Demo01.exe
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-Reflection-and-Atributes\Demo\bin\Debug\netcoreapp3.1\Demo01.deps.json
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-Reflection-and-Atributes\Demo\bin\Debug\netcoreapp3.1\Demo01.runtimeconfig.json
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-Reflection-and-Atributes\Demo\bin\Debug\netcoreapp3.1\Demo01.runtimeconfig.dev.json
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-Reflection-and-Atributes\Demo\bin\Debug\netcoreapp3.1\Demo01.dll
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-Reflection-and-Atributes\Demo\bin\Debug\netcoreapp3.1\Demo01.pdb
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-Reflection-and-Atributes\Demo\obj\Debug\netcoreapp3.1\Demo01.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-Reflection-and-Atributes\Demo\obj\Debug\netcoreapp3.1\Demo01.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-Reflection-and-Atributes\Demo\obj\Debug\netcoreapp3.1\Demo01.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-Reflection-and-Atributes\Demo\obj\Debug\netcoreapp3.1\Demo01.AssemblyInfo.cs
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-Reflection-and-Atributes\Demo\obj\Debug\netcoreapp3.1\Demo01.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-Reflection-and-Atributes\Demo\obj\Debug\netcoreapp3.1\Demo01.dll
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-Reflection-and-Atributes\Demo\obj\Debug\netcoreapp3.1\Demo01.pdb
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-Reflection-and-Atributes\Demo\obj\Debug\netcoreapp3.1\Demo01.genruntimeconfig.cache
