@@ -1,0 +1,14 @@
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Encapsulation-Lab\PersonsInfo\P04.First_and_Reserve_Team\bin\Debug\netcoreapp3.1\P04.First_and_Reserve_Team.exe
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Encapsulation-Lab\PersonsInfo\P04.First_and_Reserve_Team\bin\Debug\netcoreapp3.1\P04.First_and_Reserve_Team.deps.json
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Encapsulation-Lab\PersonsInfo\P04.First_and_Reserve_Team\bin\Debug\netcoreapp3.1\P04.First_and_Reserve_Team.runtimeconfig.json
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Encapsulation-Lab\PersonsInfo\P04.First_and_Reserve_Team\bin\Debug\netcoreapp3.1\P04.First_and_Reserve_Team.runtimeconfig.dev.json
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Encapsulation-Lab\PersonsInfo\P04.First_and_Reserve_Team\bin\Debug\netcoreapp3.1\P04.First_and_Reserve_Team.dll
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Encapsulation-Lab\PersonsInfo\P04.First_and_Reserve_Team\bin\Debug\netcoreapp3.1\P04.First_and_Reserve_Team.pdb
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Encapsulation-Lab\PersonsInfo\P04.First_and_Reserve_Team\obj\Debug\netcoreapp3.1\P04.First_and_Reserve_Team.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Encapsulation-Lab\PersonsInfo\P04.First_and_Reserve_Team\obj\Debug\netcoreapp3.1\P04.First_and_Reserve_Team.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Encapsulation-Lab\PersonsInfo\P04.First_and_Reserve_Team\obj\Debug\netcoreapp3.1\P04.First_and_Reserve_Team.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Encapsulation-Lab\PersonsInfo\P04.First_and_Reserve_Team\obj\Debug\netcoreapp3.1\P04.First_and_Reserve_Team.AssemblyInfo.cs
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Encapsulation-Lab\PersonsInfo\P04.First_and_Reserve_Team\obj\Debug\netcoreapp3.1\P04.First_and_Reserve_Team.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Encapsulation-Lab\PersonsInfo\P04.First_and_Reserve_Team\obj\Debug\netcoreapp3.1\P04.First_and_Reserve_Team.dll
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Encapsulation-Lab\PersonsInfo\P04.First_and_Reserve_Team\obj\Debug\netcoreapp3.1\P04.First_and_Reserve_Team.pdb
+C:\Users\HP\source\repos\C# OOP\CSharp-Advanced-OOP-SoftUni-2022-Encapsulation-Lab\PersonsInfo\P04.First_and_Reserve_Team\obj\Debug\netcoreapp3.1\P04.First_and_Reserve_Team.genruntimeconfig.cache

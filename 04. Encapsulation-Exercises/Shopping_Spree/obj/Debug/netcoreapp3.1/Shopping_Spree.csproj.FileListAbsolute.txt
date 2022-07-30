@@ -1,0 +1,14 @@
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-SoftUni-Encapsulation-Exercises\Shopping_Spree\bin\Debug\netcoreapp3.1\Shopping_Spree.exe
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-SoftUni-Encapsulation-Exercises\Shopping_Spree\bin\Debug\netcoreapp3.1\Shopping_Spree.deps.json
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-SoftUni-Encapsulation-Exercises\Shopping_Spree\bin\Debug\netcoreapp3.1\Shopping_Spree.runtimeconfig.json
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-SoftUni-Encapsulation-Exercises\Shopping_Spree\bin\Debug\netcoreapp3.1\Shopping_Spree.runtimeconfig.dev.json
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-SoftUni-Encapsulation-Exercises\Shopping_Spree\bin\Debug\netcoreapp3.1\Shopping_Spree.dll
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-SoftUni-Encapsulation-Exercises\Shopping_Spree\bin\Debug\netcoreapp3.1\Shopping_Spree.pdb
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-SoftUni-Encapsulation-Exercises\Shopping_Spree\obj\Debug\netcoreapp3.1\Shopping_Spree.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-SoftUni-Encapsulation-Exercises\Shopping_Spree\obj\Debug\netcoreapp3.1\Shopping_Spree.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-SoftUni-Encapsulation-Exercises\Shopping_Spree\obj\Debug\netcoreapp3.1\Shopping_Spree.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-SoftUni-Encapsulation-Exercises\Shopping_Spree\obj\Debug\netcoreapp3.1\Shopping_Spree.AssemblyInfo.cs
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-SoftUni-Encapsulation-Exercises\Shopping_Spree\obj\Debug\netcoreapp3.1\Shopping_Spree.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-SoftUni-Encapsulation-Exercises\Shopping_Spree\obj\Debug\netcoreapp3.1\Shopping_Spree.dll
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-SoftUni-Encapsulation-Exercises\Shopping_Spree\obj\Debug\netcoreapp3.1\Shopping_Spree.pdb
+C:\Users\HP\source\repos\C# OOP\CSharp-OOP-SoftUni-Encapsulation-Exercises\Shopping_Spree\obj\Debug\netcoreapp3.1\Shopping_Spree.genruntimeconfig.cache
