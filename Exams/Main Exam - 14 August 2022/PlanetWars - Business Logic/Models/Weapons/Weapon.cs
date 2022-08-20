@@ -1,35 +1,35 @@
-﻿namespace PlanetWars.Models.Weapons
-{
-    using Contracts;
-    using System;
+﻿using PlanetWars.Models.Weapons.Contracts;
+using System;
+using PlanetWars.Utilities.Messages;
 
+namespace PlanetWars.Models.Weapons
+{
     public abstract class Weapon : IWeapon
     {
         private int destructionLevel;
 
-        public Weapon(int destructionLevel, double price)
+        protected Weapon(int destructionLevel, double price)
         {
-            this.DestructionLevel = destructionLevel;
-            this.Price = price;
+            DestructionLevel = destructionLevel;
+            Price = price;
         }
-
         public double Price { get; set; }
 
-        public int DestructionLevel
+        public virtual int DestructionLevel
         {
-            get => this.destructionLevel;
-            protected set
+            get => destructionLevel;
+            private set
             {
-                if (value <= 0)
+                if (value < 1)
                 {
-                    throw new ArgumentException("Destruction level cannot be zero or negative.");
+                    throw new ArgumentException(ExceptionMessages.TooLowDestructionLevel);
                 }
-                else if (value > 10)
+                if (value > 10)
                 {
-                    throw new AggregateException("Destruction level cannot exceed 10 power points.");
+                    throw new ArgumentException(ExceptionMessages.TooHighDestructionLevel);
                 }
 
-                this.destructionLevel = value;
+                destructionLevel = value;
             }
         }
     }

@@ -1,32 +1,24 @@
-﻿namespace PlanetWars.Repositories
-{
-    using Contracts;
-    using System.Collections.Generic;
-    using Models.MilitaryUnits.Contracts;
-    using System.Linq;
+﻿using PlanetWars.Models.MilitaryUnits.Contracts;
+using PlanetWars.Repositories.Contracts;
+using System.Collections.Generic;
+using System.Linq;
 
+namespace PlanetWars.Repositories
+{
     public class UnitRepository : IRepository<IMilitaryUnit>
     {
-        private HashSet<IMilitaryUnit> models;
+        private readonly List<IMilitaryUnit> models;
 
         public UnitRepository()
         {
-            this.models = new HashSet<IMilitaryUnit>();
+            models = new List<IMilitaryUnit>();
         }
+        public IReadOnlyCollection<IMilitaryUnit> Models => models;
 
-        public IReadOnlyCollection<IMilitaryUnit> Models => this.models;
+        public void AddItem(IMilitaryUnit model) => models.Add(model);
 
-        public void AddItem(IMilitaryUnit model)
-            => this.models.Add(model);
+        public IMilitaryUnit FindByName(string name) => models.FirstOrDefault(m => m.GetType().Name == name);
 
-        public IMilitaryUnit FindByName(string name)
-            => this.models.FirstOrDefault(m => m.GetType().Name.ToLower() == name.ToLower());
-
-        public bool RemoveItem(string name)
-        {
-            var model = this.FindByName(name);
-
-            return this.models.Remove(model);
-        }
+        public bool RemoveItem(string name) => models.Remove(models.FirstOrDefault(m => m.GetType().Name == name));
     }
 }

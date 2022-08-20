@@ -5,8 +5,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="GeoAPI.CoordinateSystems" Version="1.7.5" />
-  </ItemGroup>
-
 </Project>

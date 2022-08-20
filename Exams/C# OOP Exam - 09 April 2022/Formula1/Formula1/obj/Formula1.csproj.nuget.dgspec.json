@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\GitHub\\CSharp-OOP-SoftUni-2022\\Exams\\Main Exam\\PlanetWars.csproj": {}
+    "C:\\Users\\User\\Documents\\GitHub\\CSharp-OOP-SoftUni-2022\\Exams\\C# OOP Exam - 09 April 2022\\Formula1\\Formula1\\Formula1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\GitHub\\CSharp-OOP-SoftUni-2022\\Exams\\Main Exam\\PlanetWars.csproj": {
+    "C:\\Users\\User\\Documents\\GitHub\\CSharp-OOP-SoftUni-2022\\Exams\\C# OOP Exam - 09 April 2022\\Formula1\\Formula1\\Formula1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\CSharp-OOP-SoftUni-2022\\Exams\\Main Exam\\PlanetWars.csproj",
-        "projectName": "PlanetWars",
-        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\CSharp-OOP-SoftUni-2022\\Exams\\Main Exam\\PlanetWars.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\CSharp-OOP-SoftUni-2022\\Exams\\C# OOP Exam - 09 April 2022\\Formula1\\Formula1\\Formula1.csproj",
+        "projectName": "Formula1",
+        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\CSharp-OOP-SoftUni-2022\\Exams\\C# OOP Exam - 09 April 2022\\Formula1\\Formula1\\Formula1.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\CSharp-OOP-SoftUni-2022\\Exams\\Main Exam\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\CSharp-OOP-SoftUni-2022\\Exams\\C# OOP Exam - 09 April 2022\\Formula1\\Formula1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,12 +39,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "dependencies": {
-            "GeoAPI.CoordinateSystems": {
-              "target": "Package",
-              "version": "[1.7.5, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

@@ -2,11 +2,9 @@
 {
     public class BioChemicalWeapon : Weapon
     {
-        private const double PRICE = 3.2;
-        public BioChemicalWeapon(int destructionLevel) 
-            : base(destructionLevel, PRICE)
+        public BioChemicalWeapon(int destructionLevel)
+            : base(destructionLevel, 3.2)
         {
-
         }
     }
 }

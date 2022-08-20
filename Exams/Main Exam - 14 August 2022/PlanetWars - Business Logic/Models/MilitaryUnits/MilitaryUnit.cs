@@ -1,35 +1,36 @@
-﻿namespace PlanetWars.Models.MilitaryUnits
-{
-    using System;
-    using Contracts;
+﻿using PlanetWars.Models.MilitaryUnits.Contracts;
+using System;
+using PlanetWars.Utilities.Messages;
 
+namespace PlanetWars.Models.MilitaryUnits
+{
     public abstract class MilitaryUnit : IMilitaryUnit
     {
-        private const int INITIAL_ENDURANCE_LEVEL = 1;
-
+        private int enduranceLevel = 1;
         private double cost;
 
-        public MilitaryUnit(double cost)
+        protected MilitaryUnit(double cost)
         {
-            this.Cost = cost;
-            this.EnduranceLevel = INITIAL_ENDURANCE_LEVEL;
-        }
-        public double Cost 
-        { 
-            get => this.cost;
-            set => this.cost = value;
+            Cost = cost;
         }
 
-        public int EnduranceLevel { get; set; }
+        public double Cost
+        {
+            get => cost;
+            private set => cost = value;
+        }
+
+        public int EnduranceLevel => enduranceLevel;
 
         public void IncreaseEndurance()
         {
-            if (this.EnduranceLevel + 1 > 20)
-            {
-                throw new ArgumentException("Endurance level cannot exceed 20 power points.");
-            }
+            enduranceLevel++;
 
-            this.EnduranceLevel++;
+            if (enduranceLevel > 20)
+            {
+                enduranceLevel = 20;
+                throw new ArgumentException(ExceptionMessages.EnduranceLevelExceeded);
+            }
         }
     }
 }

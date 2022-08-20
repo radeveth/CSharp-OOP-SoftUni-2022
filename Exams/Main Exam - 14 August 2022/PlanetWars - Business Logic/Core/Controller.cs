@@ -1,270 +1,196 @@
-﻿namespace PlanetWars.Core
-{
-    using System;
-    using Contracts;
-    using System.Linq;
-    using Models.Planets;
-    using PlanetWars.Repositories;
-    using Repositories.Contracts;
-    using PlanetWars.Models.MilitaryUnits;
-    using System.Collections.Generic;
-    using PlanetWars.Models.Weapons;
-    using PlanetWars.Models.MilitaryUnits.Contracts;
-    using PlanetWars.Models.Weapons.Contracts;
-    using System.Text;
+﻿using PlanetWars.Core.Contracts;
+using PlanetWars.Models.MilitaryUnits;
+using PlanetWars.Models.MilitaryUnits.Contracts;
+using PlanetWars.Models.Planets;
+using PlanetWars.Models.Planets.Contracts;
+using PlanetWars.Models.Weapons;
+using PlanetWars.Models.Weapons.Contracts;
+using PlanetWars.Repositories;
+using PlanetWars.Utilities.Messages;
+using System;
+using System.Linq;
+using System.Text;
 
+namespace PlanetWars.Core
+{
     public class Controller : IController
     {
-        private ICollection<string> availableMilitaryUnitsTypes;
-        private ICollection<string> availableWeaponTypes;
-
-        private IRepository<IPlanet> planets;
+        private PlanetRepository planets;
 
         public Controller()
         {
-            this.planets = new PlanetRepository();
-
-            this.availableMilitaryUnitsTypes = new List<string>()
+            planets = new PlanetRepository();
+        }
+        public string CreatePlanet(string name, double budget)
+        {
+            if (planets.FindByName(name) != null)
             {
-                "AnonymousImpactUnit",
-                "SpaceForces",
-                "StormTroopers"
-            };
+                return string.Format(OutputMessages.ExistingPlanet, name);
+            }
 
-            this.availableWeaponTypes = new List<string>()
-            {
-                "BioChemicalWeapon",
-                "NuclearWeapon",
-                "SpaceMissiles"
-            };
+            Planet planet = new Planet(name, budget);
+            planets.AddItem(planet);
+
+            return string.Format(OutputMessages.NewPlanet, name);
         }
 
-        // TODO: Can to Optimizate the code
         public string AddUnit(string unitTypeName, string planetName)
         {
-            var planet = this.planets.FindByName(planetName);
+            var planet = planets.FindByName(planetName);
 
             if (planet == null)
             {
-                throw new InvalidOperationException($"Planet {planetName} does not exist!");
-            }
-            if (!this.availableMilitaryUnitsTypes.Any(x => x.ToLower() == unitTypeName.ToLower()))
-            {
-                throw new InvalidOperationException($"{unitTypeName} still not available!");
+                throw new InvalidOperationException(string.Format(ExceptionMessages.UnexistingPlanet, planetName));
             }
 
-            if (planet.Army.Any(a => a.GetType().Name.ToLower() == unitTypeName.ToLower()))
+            if (planet.Army.Any(u => u.GetType().Name == unitTypeName))
             {
-                throw new InvalidOperationException($"{unitTypeName} already added to the Army of {planetName}!");
+                throw new InvalidOperationException(string.Format(ExceptionMessages.UnitAlreadyAdded, unitTypeName,
+                    planetName));
             }
 
-            IMilitaryUnit unit;
-
-            unit = unitTypeName switch
+            IMilitaryUnit unit = null;
+            switch (unitTypeName)
             {
-                nameof(AnonymousImpactUnit) => new AnonymousImpactUnit(),
-                nameof(SpaceForces) => new SpaceForces(),
-                nameof(StormTroopers) => new StormTroopers(),
-                _ => throw new InvalidOperationException($"{unitTypeName} still not available!")
-            };
+                case nameof(StormTroopers):
+                    unit = new StormTroopers();
+                    break;
+                case nameof(SpaceForces):
+                    unit = new SpaceForces();
+                    break;
+                case nameof(AnonymousImpactUnit):
+                    unit = new AnonymousImpactUnit();
+                    break;
+                default:
+                    throw new InvalidOperationException(string.Format(ExceptionMessages.ItemNotAvailable, unitTypeName));
+            }
 
             planet.Spend(unit.Cost);
             planet.AddUnit(unit);
 
-            return $"{unitTypeName} added successfully to the Army of {planetName}!";
+            return string.Format(OutputMessages.UnitAdded, unitTypeName, planetName);
         }
 
         public string AddWeapon(string planetName, string weaponTypeName, int destructionLevel)
         {
-            var planet = this.planets.FindByName(planetName);
+            var planet = planets.FindByName(planetName);
 
             if (planet == null)
             {
-                throw new InvalidOperationException($"Planet {planetName} does not exist!");
-            }
-            if (planet.Weapons.Any(w => w.GetType().Name.ToLower() == weaponTypeName))
-            {
-                throw new InvalidOperationException($"{weaponTypeName} already added to the Weapons of {planetName}!");
-            }
-            if (!this.availableWeaponTypes.Any(w => w.ToLower() == weaponTypeName.ToLower()))
-            {
-                throw new InvalidOperationException($"{weaponTypeName} still not available!");
+                throw new InvalidOperationException(string.Format(ExceptionMessages.UnexistingPlanet, planetName));
             }
 
-            IWeapon weapon;
-            weapon = weaponTypeName switch
+            if (planet.Weapons.Any(w => w.GetType().Name == weaponTypeName))
             {
-                nameof(BioChemicalWeapon) => new BioChemicalWeapon(destructionLevel),
-                nameof(NuclearWeapon) => new NuclearWeapon(destructionLevel),
-                nameof(SpaceMissiles) => new SpaceMissiles(destructionLevel),
-                _ => throw new InvalidOperationException($"{weaponTypeName} still not available!");
-            };
+                throw new InvalidOperationException(string.Format(ExceptionMessages.WeaponAlreadyAdded, weaponTypeName,
+                    planetName));
+            }
+
+            IWeapon weapon = null;
+            switch (weaponTypeName)
+            {
+                case nameof(BioChemicalWeapon):
+                    weapon = new BioChemicalWeapon(destructionLevel);
+                    break;
+                case nameof(NuclearWeapon):
+                    weapon = new NuclearWeapon(destructionLevel);
+                    break;
+                case nameof(SpaceMissiles):
+                    weapon = new SpaceMissiles(destructionLevel);
+                    break;
+                default:
+                    throw new InvalidOperationException(string.Format(ExceptionMessages.ItemNotAvailable, weaponTypeName));
+            }
 
             planet.Spend(weapon.Price);
             planet.AddWeapon(weapon);
 
-            return $"{planetName} purchased {weaponTypeName}!";
-        }
-
-        public string CreatePlanet(string name, double budget)
-        {
-            if (this.planets.FindByName(name) != null)
-            {
-                return $"Planet {name} is already added!";
-            }
-
-            // var planet = new IPlanet(name, budget);
-            // this.planets.AddItem(planet);
-
-            this.planets.AddItem(new IPlanet(name, budget));
-            return $"Successfully added Planet: {name}";
-        }
-
-        public string ForcesReport()
-        {
-            StringBuilder report = new StringBuilder();
-            report.AppendLine("***UNIVERSE PLANET MILITARY REPORT***");
-
-            foreach (var planet in this.planets.Models
-                .OrderByDescending(p => p.MilitaryPower)
-                .ThenBy(p => p.Name))
-            {
-                report.AppendLine(planet.PlanetInfo().Trim());
-            }
-
-            return report.ToString().Trim();
-        }
-
-        public string SpaceCombat(string planetOne, string planetTwo)
-        {
-            var firstPlanetInWar = this.planets.FindByName(planetOne);
-            var secondPlanetInWar = this.planets.FindByName(planetTwo);
-
-            var militaryPowerOfFirstPlanet = firstPlanetInWar.MilitaryPower;
-            var militaryPowerOfSecondPlanet = secondPlanetInWar.MilitaryPower;
-
-            if (militaryPowerOfFirstPlanet > militaryPowerOfSecondPlanet)
-            {
-                return SpaceCombatResult(firstPlanetInWar, secondPlanetInWar);
-            }
-            else if (militaryPowerOfFirstPlanet < militaryPowerOfSecondPlanet)
-            {
-                return SpaceCombatResult(secondPlanetInWar, firstPlanetInWar);
-            }
-            else if (militaryPowerOfFirstPlanet == militaryPowerOfSecondPlanet)
-            {
-                if (firstPlanetInWar.Weapons.Any(w => w.GetType().Name.ToLower() == "NuclearWeapon".ToLower()) &&
-                   !secondPlanetInWar.Weapons.Any(w => w.GetType().Name.ToLower() == "NuclearWeapon".ToLower()))
-                {
-                    return SpaceCombatResult(firstPlanetInWar, secondPlanetInWar);
-                }
-                else if (secondPlanetInWar.Weapons.Any(w => w.GetType().Name.ToLower() == "NuclearWeapon".ToLower()) &&
-                        !firstPlanetInWar.Weapons.Any(w => w.GetType().Name.ToLower() == "NuclearWeapon".ToLower()))
-                {
-                    return SpaceCombatResult(secondPlanetInWar, firstPlanetInWar);
-                }
-                else if ((firstPlanetInWar.Weapons.Any(w => w.GetType().Name.ToLower() == "NuclearWeapon".ToLower()) &&
-                         secondPlanetInWar.Weapons.Any(w => w.GetType().Name.ToLower() == "NuclearWeapon".ToLower()))
-                                                                                                                    ||
-                       (!firstPlanetInWar.Weapons.Any(w => w.GetType().Name.ToLower() == "NuclearWeapon".ToLower()) &&
-                        !secondPlanetInWar.Weapons.Any(w => w.GetType().Name.ToLower() == "NuclearWeapon".ToLower())))
-                {
-                    firstPlanetInWar.Spend(firstPlanetInWar.Budget / 2);
-                    secondPlanetInWar.Spend(secondPlanetInWar.Budget / 2);
-
-                    return "The only winners from the war are the ones who supply the bullets and the bandages!";
-                }
-            }
-
-            return "Have a bug!";
-        }
-
-        private string SpaceCombatResult(IPlanet winner, IPlanet loser)
-        {
-            loser.Spend(loser.Budget / 2);
-            winner.Spend(winner.Budget / 2);
-            winner.Budget += loser.Budget / 2;
-
-            return $"{winner.Name} destructed {loser.Name}!";
+            return string.Format(OutputMessages.WeaponAdded, planetName, weaponTypeName);
         }
 
         public string SpecializeForces(string planetName)
         {
-            var planet = this.planets.FindByName(planetName);
+            var planet = planets.FindByName(planetName);
 
             if (planet == null)
             {
-                throw new InvalidOperationException($"Planet {planetName} does not exist!");
+                throw new InvalidOperationException(string.Format(ExceptionMessages.UnexistingPlanet, planetName));
             }
+
             if (!planet.Army.Any())
             {
-                throw new InvalidOperationException("No units available for upgrade!");
+                throw new InvalidOperationException(ExceptionMessages.NoUnitsFound);
             }
 
-            double costsForIncreasingArmyEndurance = 1.25;
-            planet.Spend(costsForIncreasingArmyEndurance);
+            planet.Spend(1.25);
+            planet.TrainArmy();
 
-            foreach (var unit in planet.Army)
-            {
-                unit.IncreaseEndurance();
-            }
-
-            return $"{planetName} has upgraded its forces!";
+            return string.Format(OutputMessages.ForcesUpgraded, planetName);
         }
 
-        //private IMilitaryUnit CreateUnit(string unitType, IPlanet planet)
-        //{
-        //    if (unitType.ToLower() == "AnonymousImpactUnit".ToLower())
-        //    {
-        //        var unit = new AnonymousImpactUnit();
-        //        planet.Spend(unit.Cost);
+        public string SpaceCombat(string planetOne, string planetTwo)
+        {
+            var attacker = planets.FindByName(planetOne);
+            var defender = planets.FindByName(planetTwo);
 
-        //        return unit;
-        //    }
-        //    else if (unitType.ToLower() == "SpaceForces".ToLower())
-        //    {
-        //        var unit = new SpaceForces();
-        //        planet.Spend(unit.Cost);
+            bool attackerIsNuclear = attacker.Weapons.Any(w => w is NuclearWeapon);
+            bool defenderIsNuclear = defender.Weapons.Any(w => w is NuclearWeapon);
+            IPlanet winner = null;
+            IPlanet looser = null;
+            if (attacker.MilitaryPower > defender.MilitaryPower)
+            {
+                winner = attacker;
+                looser = defender;
+            }
+            else if (defender.MilitaryPower > attacker.MilitaryPower)
+            {
+                winner = defender;
+                looser = attacker;
+            }
+            else
+            {
+                if (attackerIsNuclear && !defenderIsNuclear)
+                {
+                    winner = attacker;
+                    looser = defender;
+                }
+                else if (defenderIsNuclear && !attackerIsNuclear)
+                {
+                    winner = defender;
+                    looser = attacker;
+                }
+                else
+                {
+                    attacker.Spend(attacker.Budget / 2);
+                    defender.Spend(defender.Budget / 2);
 
-        //        return unit;
-        //    }
-        //    else if (unitType.ToLower() == "StormTroopers".ToLower())
-        //    {
-        //        var unit = new StormTroopers();
-        //        planet.Spend(unit.Cost);
+                    return OutputMessages.NoWinner;
+                }
+            }
 
-        //        return unit;
-        //    }
-        //    else
-        //    {
-        //        throw new InvalidOperationException($"{unitTypeName} still not available!");
-        //    }
-        //}
+            winner.Spend(winner.Budget / 2);
+            winner.Profit(looser.Budget / 2);
+            winner.Profit(looser.Army.Sum(u => u.Cost) + looser.Weapons.Sum(w => w.Price));
 
-        //private IWeapon CreateWeapon(IPlanet planet, string weaponType, int destructionLevel)
-        //{
-        //    if (weaponType.ToLower() == "BioChemicalWeapon".ToLower())
-        //    {
-        //        var weapon = new BioChemicalWeapon(destructionLevel);
-        //        planet.Spend(weapon.Price);
-        //        return weapon;
-        //    }
-        //    else if (weaponType.ToLower() == "NuclearWeapon".ToLower())
-        //    {
-        //        var weapon = new NuclearWeapon(destructionLevel);
-        //        planet.Spend(weapon.Price);
-        //        return weapon;
-        //    }
-        //    else if (weaponType.ToLower() == "SpaceMissiles".ToLower())
-        //    {
-        //        var weapon = new SpaceMissiles(destructionLevel);
-        //        planet.Spend(weapon.Price);
-        //        return weapon;
-        //    }
-        //    else
-        //    {
-        //        return null;
-        //    }
-        //}
+            planets.RemoveItem(looser.Name);
+
+            return string.Format(OutputMessages.WinnigTheWar, winner.Name, looser.Name);
+        }
+
+        public string ForcesReport()
+        {
+            var ordered = planets.Models.OrderByDescending(p => p.MilitaryPower).ThenBy(p => p.Name);
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("***UNIVERSE PLANET MILITARY REPORT***");
+
+            foreach (var planet in ordered)
+            {
+                sb.AppendLine(planet.PlanetInfo());
+            }
+
+            return sb.ToString().TrimEnd();
+        }
     }
 }

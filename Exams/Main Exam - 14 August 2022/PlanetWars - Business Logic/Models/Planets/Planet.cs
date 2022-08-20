@@ -1,126 +1,132 @@
-﻿namespace PlanetWars.Models.Planets
+﻿using PlanetWars.Models.MilitaryUnits.Contracts;
+using PlanetWars.Models.Planets.Contracts;
+using PlanetWars.Models.Weapons.Contracts;
+using PlanetWars.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using PlanetWars.Utilities.Messages;
+
+namespace PlanetWars.Models.Planets
 {
-    using System;
-    using Contracts;
-    using Weapons.Contracts;
-    using MilitaryUnits.Contracts;
-    using System.Collections.Generic;
-    using PlanetWars.Repositories.Contracts;
-    using PlanetWars.Repositories;
-    using System.Linq;
-    using PlanetWars.Models.MilitaryUnits;
-    using PlanetWars.Models.Weapons;
-    using System.Text;
-
-    public class IPlanet : Contracts.IPlanet
+    public class Planet : IPlanet
     {
-        private IRepository<IMilitaryUnit> units;
-        private IRepository<IWeapon> weapons;
-
+        private UnitRepository units;
+        private WeaponRepository weapons;
         private string name;
         private double budget;
+        private double militaryPower;
 
-        public IPlanet(string name, double budget)
+        public Planet(string name, double budget)
         {
-            this.Name = name;
-            this.Budget = budget;
+            Name = name;
+            Budget = budget;
 
-            this.units = new UnitRepository();
-            this.weapons = new WeaponRepository();
+            units = new UnitRepository();
+            weapons = new WeaponRepository();
         }
 
         public string Name
         {
-            get => this.name;
-            set
+            get => name;
+            private set
             {
-                if (String.IsNullOrWhiteSpace(value))
+                if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Planet name cannot be null or empty.");
+                    throw new ArgumentException(ExceptionMessages.InvalidPlanetName);
                 }
 
-                this.name = value;
+                name = value;
             }
         }
 
         public double Budget
         {
-            get => this.budget; 
-            set
+            get => budget;
+            private set
             {
-                if (value < 0)
+                if (value <0)
                 {
-                    throw new ArgumentException("Budget's amount cannot be negative.");
+                    throw new ArgumentException(ExceptionMessages.InvalidBudgetAmount);
                 }
 
-                this.budget = value;
+                budget = value;
             }
         }
 
-        public double MilitaryPower
-            => this.CalculateMilitaryPower();
+        public double MilitaryPower => GetMilitaryPower();
 
-        public IReadOnlyCollection<IMilitaryUnit> Army => this.units.Models;
+        public IReadOnlyCollection<IMilitaryUnit> Army =>  units.Models;
 
-        public IReadOnlyCollection<IWeapon> Weapons => this.weapons.Models;
+        public IReadOnlyCollection<IWeapon> Weapons =>  weapons.Models;
 
         public void AddUnit(IMilitaryUnit unit)
-            => this.units.AddItem(unit);
-
-        public void AddWeapon(IWeapon weapon)
-            => this.weapons.AddItem(weapon);
-
-        public string PlanetInfo()
         {
-            StringBuilder result = new StringBuilder();
-            result
-                .AppendLine($"Planet: {this.Name}")
-                .AppendLine($"--Budget: {this.Budget} billion QUID")
-                .AppendLine($"Forces: {(this.units.Models.Any() ? string.Join(", ", this.units.Models.Select(u => u.GetType().Name)) : "No units")}")
-                .AppendLine($"--Combat equipment: {(this.weapons.Models.Any() ? string.Join(",", this.weapons.Models.Select(w => w.GetType().Name)) : "No weapons")}")
-                .AppendLine($"--Military Power: {this.MilitaryPower}");
-
-            return result.ToString().Trim();
+            units.AddItem(unit);
         }
 
-        public void Profit(double amount)
-            => this.Budget += amount;
-
-        public void Spend(double amount)
+        public void AddWeapon(IWeapon weapon)
         {
-            if (amount > this.Budget)
-            {
-                throw new InvalidOperationException("Budget too low!");
-            }
-
-            this.Budget -= amount;
+            weapons.AddItem(weapon);
         }
 
         public void TrainArmy()
         {
-            foreach (var militaryUnit in this.units.Models)
+            foreach (var unit in Army)
             {
-                militaryUnit.IncreaseEndurance();
+                unit.IncreaseEndurance();
             }
         }
 
-        private double CalculateMilitaryPower()
+        public void Spend(double amount)
         {
-            double sumOfUnitEndurances = this.units.Models.Select(units => units.EnduranceLevel).Sum();
-            double sumOfWeaponDestructionLevels = this.weapons.Models.Select(w => w.DestructionLevel).Sum();
-
-            double toatlAmount = sumOfUnitEndurances + sumOfWeaponDestructionLevels;
-
-            if (this.units.Models.Any(u => u.GetType().Name == nameof(AnonymousImpactUnit)))
+            if (Budget < amount)
             {
-                toatlAmount += toatlAmount * 0.3;
-            }
-            else if (this.units.Models.Any(u => u.GetType().Name == nameof(NuclearWeapon)))
-            {
-                toatlAmount += toatlAmount * 0.45;
+                throw new InvalidOperationException(ExceptionMessages.UnsufficientBudget);
             }
 
-            return Math.Round(toatlAmount, 3);
+            Budget -= amount;
+        }
+
+        public void Profit(double amount)
+        {
+            Budget += amount;
+        }
+
+        public string PlanetInfo()
+        {
+            string forcesAsString = Army.Any() ? string.Join(", ", Army.Select(u=> u.GetType().Name)) : "No units";
+            string weaponsAsString =
+                Weapons.Any() ? string.Join(", ", Weapons.Select(w => w.GetType().Name)) : "No weapons";
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"Planet: {this.Name}")
+                .AppendLine($"--Budget: {Budget} billion QUID")
+                .AppendLine($"--Forces: {forcesAsString}")
+                .AppendLine($"--Combat equipment: {weaponsAsString}")
+                .AppendLine($"--Military Power: {MilitaryPower}");
+
+            return sb.ToString().TrimEnd();
+        }
+
+        private double GetMilitaryPower()
+        {
+            double total = this.Weapons.Sum(w => w.DestructionLevel) + this.Army.Sum(u => u.EnduranceLevel);
+
+            if (Army.Any(u => u.GetType().Name == "AnonymousImpactUnit"))
+            {
+                total *= 1.3;
+            }
+
+            if (Weapons.Any(w=> w.GetType().Name == "NuclearWeapon"))
+            {
+                total *= 1.45;
+            }
+
+            return Math.Round(total,3);
         }
     }
 }
